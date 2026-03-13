@@ -1,0 +1,17 @@
+name: Build Market Data
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'  # 9AM IST Mon-Fri
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with: { python-version: '3.9' }
+    - run: pip install yfinance pandas numpy matplotlib scipy
+    - run: python scripts/build_data.py --out-dir data
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Update market data"
