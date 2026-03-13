@@ -1,0 +1,7 @@
+body { background: #1a1a1a; color: white; font-family: Arial; margin: 0; padding: 20px; }
+h1 { text-align: center; }
+.group { margin: 20px 0; }
+.ticker { display: inline-block; margin: 5px; padding: 10px; background: #333; border-radius: 5px; }
+.positive { border-left: 4px #4ade80 solid; }
+.negative { border-left: 4px #ef4444 solid; }
+img { height: 30px; vertical-align: middle; }
